@@ -1,26 +1,20 @@
-databases:
-  - name: textune-db
-    plan: free
-
+# Exported from Render on 2026-07-21T18:16:34Z
+version: "1"
 services:
-  - type: web
-    name: textune-api
-    runtime: python
-    rootDir: apps/api
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    plan: free
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: textune-db
-          property: connectionString
-      # Set the actual Vercel URL after the frontend is deployed (chicken-and-egg:
-      # the frontend needs this service's URL first). Comma-separate multiple
-      # origins if you also want to allow a local dev frontend.
-      - key: CORS_ORIGINS
-        value: http://localhost:5173
-      # Optional. Leave unset -- explanation polishing silently falls back to
-      # the deterministic sentence and the rest of the app behaves identically.
-      - key: GEMINI_API_KEY
-        sync: false
+- type: web
+  name: textune-api
+  runtime: python
+  repo: https://github.com/Fres02/thermotune-task
+  plan: free
+  envVars:
+  - key: GEMINI_API_KEY
+    sync: false
+  - key: CORS_ORIGINS
+    sync: false
+  - key: DATABASE_URL
+    sync: false
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+  autoDeployTrigger: commit
+  rootDir: apps/api
