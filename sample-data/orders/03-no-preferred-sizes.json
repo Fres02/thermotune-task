@@ -1,0 +1,7 @@
+{
+  "order_id": "ORD-BULK",
+  "order_quantity_kg": 9000,
+  "available_batch_sizes_kg": [],
+  "minimum_batch_size_kg": 600,
+  "maximum_batch_size_kg": 1200
+}

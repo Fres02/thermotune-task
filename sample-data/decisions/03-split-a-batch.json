@@ -1,0 +1,4 @@
+{
+  "final_batches": [800, 800, 400, 400],
+  "change_reason": "Avoid a small batch"
+}

@@ -1,0 +1,7 @@
+{
+  "order_id": "ORD-TIGHT",
+  "order_quantity_kg": 3000,
+  "available_batch_sizes_kg": [1000],
+  "minimum_batch_size_kg": 950,
+  "maximum_batch_size_kg": 1000
+}

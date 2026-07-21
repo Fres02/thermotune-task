@@ -1,0 +1,5 @@
+{
+  "final_batches": [1000, 1000, 400],
+  "change_reason": "Better machine capacity",
+  "comment": "Needs to fit the 1000kg dye vat run"
+}

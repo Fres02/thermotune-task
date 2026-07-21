@@ -1,0 +1,26 @@
+databases:
+  - name: textune-db
+    plan: free
+
+services:
+  - type: web
+    name: textune-api
+    runtime: python
+    rootDir: apps/api
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: textune-db
+          property: connectionString
+      # Set the actual Vercel URL after the frontend is deployed (chicken-and-egg:
+      # the frontend needs this service's URL first). Comma-separate multiple
+      # origins if you also want to allow a local dev frontend.
+      - key: CORS_ORIGINS
+        value: http://localhost:5173
+      # Optional. Leave unset -- explanation polishing silently falls back to
+      # the deterministic sentence and the rest of the app behaves identically.
+      - key: GEMINI_API_KEY
+        sync: false

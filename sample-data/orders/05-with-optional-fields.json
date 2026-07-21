@@ -1,0 +1,11 @@
+{
+  "order_id": "ORD-DYE-042",
+  "order_quantity_kg": 1800,
+  "available_batch_sizes_kg": [600, 900],
+  "minimum_batch_size_kg": 500,
+  "maximum_batch_size_kg": 1000,
+  "machine_capacity_kg": 900,
+  "delivery_priority": "urgent",
+  "product_type": "fabric-dyeing",
+  "planner_id": "USER-001"
+}

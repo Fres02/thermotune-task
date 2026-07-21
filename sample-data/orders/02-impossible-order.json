@@ -1,0 +1,7 @@
+{
+  "order_id": "ORD-IMPOSSIBLE",
+  "order_quantity_kg": 500,
+  "available_batch_sizes_kg": [],
+  "minimum_batch_size_kg": 600,
+  "maximum_batch_size_kg": 1000
+}
