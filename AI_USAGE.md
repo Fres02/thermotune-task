@@ -32,10 +32,10 @@
 
 ## Errors or Limitations Identified
 
-- A response endpoint (GET /api/orders/{id}) was leaking an internal database id instead of the external order id in the decision field, caught through live manual testing of the API before it reached the frontend.
 - Vite's file watcher inside Docker Desktop on Windows silently never detected any frontend file change for the whole session, since native filesystem events do not reliably propagate through Windows bind mounts.
 - The historical batch-acceptance rate only tracks batch sizes that appeared in a recommended suggestion; a batch size introduced purely through a user's edit never accumulates an acceptance rate of its own. This is a known, documented limitation rather than a bug.
-- This project has no database migration tool by design; a schema change requires dropping and recreating the affected tables in development, acceptable at this scale but not suitable for a real production system with real data.
+- AI-suggested fixes were occasionally based on plausible-sounding but incorrect assumptions about the environment (e.g. the Docker Compose health-check dependency approach), so every suggestion still had to be verified against the actual running containers rather than trusted on its own.
+
 
 ## Important Decisions Made Independently
 

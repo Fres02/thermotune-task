@@ -55,7 +55,7 @@ deduplicating equivalent plans. Each valid plan is scored on preferred-size
 match, equal-sized batches, avoiding near-minimum remainders, and batch count,
 plus a capped historical bonus. The top-scoring plan is recommended with a
 plain-language explanation built from the same scoring factors. A planner can
-accept it as-is or edit it (add, remove, split, merge, resize) through the
+accept it as it is or edit it (add, remove, split, merge, resize) through the
 batch editor, which validates live and is re-validated by the server before a
 decision is saved.
 
